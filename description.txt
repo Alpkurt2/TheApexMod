@@ -6,5 +6,6 @@ Version 0.1: The Base Game
 Version 0.1.1: Adjusted rainbow feathers needed for some Apex items
 Version 0.1.2: Fixed the Sky boss not dropping his magic weapon
 Version 0.2: 'The Elemental Update' Made dynasty wood armor and made it so Elderwood armor requires it to craft. Nerfed Elderwood armor defense. Added an accessory to the Hallow Mimic. Made the Crimson Mimic and Corrupt Mimic spawnable on opposite biome evil worlds. Added drops for the Jungle Mimic and made him spawnable, made a combination of all the biome mimic drops to create the 'Elemental' tier.
+Version 0.2.1: GITHUB INTEGRATION!!
 
 This mod is far from complete and expect even cooler stuff in the future!

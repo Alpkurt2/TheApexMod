@@ -1,8 +1,8 @@
 displayName = The Apex Mod
 author = Alpkurt2
-version = 0.2
+version = 0.2.1
 hideCode = true
 homepage = https://discord.gg/xDFkdS9bCE
 hideResources = true
 includeSource = false
-buildIgnore = *.csproj, *.user, obj\*, bin\*, .vs\*, lib\*, .git\*, .csproj.user\*
+buildIgnore = *.csproj, *.user, obj\*, bin\*, .vs\*, .git\*, .csproj.user\*
