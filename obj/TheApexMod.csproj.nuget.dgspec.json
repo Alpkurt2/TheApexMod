@@ -1,0 +1,54 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\alpku\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\TheApexMod\\TheApexMod.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\alpku\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\TheApexMod\\TheApexMod.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\alpku\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\TheApexMod\\TheApexMod.csproj",
+        "projectName": "TheApexMod",
+        "projectPath": "C:\\Users\\alpku\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\TheApexMod\\TheApexMod.csproj",
+        "packagesPath": "C:\\Users\\alpku\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\alpku\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\TheApexMod\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\alpku\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net45"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net45": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net45": {
+          "dependencies": {
+            "tModLoader.CodeAssist": {
+              "target": "Package",
+              "version": "[0.1.*, )"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
