@@ -108,6 +108,14 @@ namespace TheApexMod
                 }
             }
         }
+        public override void MeleeEffects(Item item, Rectangle hitbox)
+        {
+            if (ApexGauntlet == true)
+            {
+                int dust2 = Dust.NewDust(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, DustID.AncientLight);
+                Main.dust[dust2].noGravity = true;
+            }
+        }
 
         public override bool PreHurt(bool pvp, bool quiet, ref int damage, ref int hitDirection, ref bool crit,
         ref bool customDamage, ref bool playSound, ref bool genGore, ref PlayerDeathReason damageSource)
@@ -123,10 +131,24 @@ namespace TheApexMod
         public override void OnHitNPC(Item item, NPC target, int damage, float knockback, bool crit)
         {
             OnHitNPCEither(target, damage, knockback, crit);
+            if (item.melee)
+            {
+                if (ApexGauntlet == true)
+                {
+                    target.AddBuff(ModContent.BuffType<WhiteFlames>(), Main.rand.Next(120, 360));
+                }
+            }
         }
         public override void OnHitNPCWithProj(Projectile proj, NPC target, int damage, float knockback, bool crit)
         {
             OnHitNPCEither(target, damage, knockback, crit, proj.type);
+            if (proj.melee)
+            {
+                if (ApexGauntlet == true)
+                {
+                    target.AddBuff(ModContent.BuffType<WhiteFlames>(), Main.rand.Next(120, 360));
+                }
+            }
         }
 
         public void OnHitNPCEither(NPC target, int damage, float knockback, bool crit, int projectile = -1)

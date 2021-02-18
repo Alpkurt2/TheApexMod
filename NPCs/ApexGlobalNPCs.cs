@@ -132,6 +132,11 @@ namespace TheApexMod.NPCs
                 if (Main.rand.Next(10) == 0)
                     Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<CrystalizedSoul>(), 1);
             }
+            if (npc.type == NPCID.DukeFishron)
+            {
+                if (Main.rand.Next(10) == 0)
+                    Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<TheDuke>(), 1);
+            }
             if (npc.type == NPCID.BigMimicJungle)
             {
                 switch (Main.rand.Next(4))
@@ -168,9 +173,9 @@ namespace TheApexMod.NPCs
             }
             if (player.ZoneSkyHeight)
             {
-                if (Main.hardMode)
+                if (NPC.downedMoonlord)
                 {
-                    if (Main.rand.Next(100) == 0)
+                    if (Main.rand.Next(500) == 0)
                         Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<MysteriousFeather>(), 1);
                 }
             }

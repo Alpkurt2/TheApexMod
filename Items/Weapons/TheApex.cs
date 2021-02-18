@@ -43,12 +43,9 @@ namespace TheApexMod.Items.Weapons
             TooltipLine tt = list.FirstOrDefault(x => x.Name == "Damage" && x.mod == "Terraria");
             if (tt != null)
             {
-                // We want to grab the last word of the tooltip, which is the translated word for 'damage' (depending on what language the player is using)
-                // So we split the string by whitespace, and grab the last word from the returned arrays to get the damage word, and the first to get the damage shown in the tooltip
                 string[] splitText = tt.text.Split(' ');
                 string damageValue = splitText.First();
                 string damageWord = splitText.Last();
-                // Change the tooltip text
                 tt.text = damageValue + " " + damageWord;
             }
         }
@@ -80,6 +77,7 @@ namespace TheApexMod.Items.Weapons
             item.channel = true;
             item.UseSound = SoundID.Item13;
             item.noMelee = true;
+            Item.staff[item.type] = true;
         }
         public override void OnHitNPC(Player player, NPC target, int damage, float knockBack, bool crit)
         {

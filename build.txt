@@ -1,6 +1,6 @@
 displayName = The Apex Mod
 author = Alpkurt2
-version = 0.2.2
+version = 0.3
 hideCode = true
 homepage = https://forums.terraria.org/index.php?threads/the-apex-mod.102438/
 hideResources = true

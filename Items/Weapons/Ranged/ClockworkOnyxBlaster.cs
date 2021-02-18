@@ -41,7 +41,7 @@ namespace TheApexMod.Items.Weapons.Ranged
 
             Projectile.NewProjectile(position.X, position.Y, speedX, speedY, ProjectileID.BlackBolt, damage, knockBack, player.whoAmI);
 
-            int numberProjectiles = 4 + Main.rand.Next(2); // 4 or 5 shots
+            int numberProjectiles = 4 + Main.rand.Next(2);
             for (int i = 0; i < numberProjectiles; i++)
             {
                 Vector2 perturbedSpeed = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(10));

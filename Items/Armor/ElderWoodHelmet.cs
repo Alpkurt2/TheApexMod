@@ -47,16 +47,16 @@ namespace TheApexMod.Items.Armor
             recipe.SetResult(this);
             recipe.AddRecipe();
 
-            ModRecipe recipetwo = new ModRecipe(mod);
-            recipetwo.AddIngredient(ItemID.WoodHelmet, 1);
-            recipetwo.AddIngredient(ItemID.BorealWoodHelmet, 1);
-            recipetwo.AddIngredient(ItemID.RichMahoganyHelmet, 1);
-            recipetwo.AddIngredient(ItemID.ShadewoodHelmet, 1);
-            recipetwo.AddIngredient(ItemID.PalmWoodHelmet, 1);
-            recipetwo.AddIngredient(ModContent.ItemType<DynastyWoodHelmet>(), 1);
-            recipetwo.AddTile(TileID.WorkBenches);
-            recipetwo.SetResult(this);
-            recipetwo.AddRecipe();
+            recipe = new ModRecipe(mod);
+            recipe.AddIngredient(ItemID.WoodHelmet, 1);
+            recipe.AddIngredient(ItemID.BorealWoodHelmet, 1);
+            recipe.AddIngredient(ItemID.RichMahoganyHelmet, 1);
+            recipe.AddIngredient(ItemID.ShadewoodHelmet, 1);
+            recipe.AddIngredient(ItemID.PalmWoodHelmet, 1);
+            recipe.AddIngredient(ModContent.ItemType<DynastyWoodHelmet>(), 1);
+            recipe.AddTile(TileID.WorkBenches);
+            recipe.SetResult(this);
+            recipe.AddRecipe();
         }
     }
 }

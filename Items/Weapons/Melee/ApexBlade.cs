@@ -42,6 +42,7 @@ namespace TheApexMod.Items.Weapons.Melee
             item.autoReuse = true;
             item.shoot = mod.ProjectileType("ApexSwordProjectile");
             item.shootSpeed = 20f;
+            item.scale = 1.25f;
         }
         public override void OnHitNPC(Player player, NPC target, int damage, float knockBack, bool crit)
         {

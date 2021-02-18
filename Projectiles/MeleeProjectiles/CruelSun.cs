@@ -22,11 +22,13 @@ namespace TheApexMod.Projectiles.MeleeProjectiles
             projectile.penetrate = -1;
             projectile.friendly = true;
             projectile.hostile = false;
-            projectile.tileCollide = true;
+            projectile.tileCollide = false;
+            projectile.timeLeft = 300;
             projectile.ignoreWater = true;
             projectile.melee = true;
             projectile.light = 5;
             Main.projFrames[projectile.type] = 4;
+            
         }
         public override void AI()
         {

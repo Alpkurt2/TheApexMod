@@ -41,16 +41,16 @@ namespace TheApexMod.Items.Armor
             recipe.SetResult(this);
             recipe.AddRecipe();
 
-            ModRecipe recipetwo = new ModRecipe(mod);
-            recipetwo.AddIngredient(ItemID.WoodBreastplate, 1);
-            recipetwo.AddIngredient(ItemID.BorealWoodBreastplate, 1);
-            recipetwo.AddIngredient(ItemID.RichMahoganyBreastplate, 1);
-            recipetwo.AddIngredient(ItemID.ShadewoodBreastplate, 1);
-            recipetwo.AddIngredient(ItemID.PalmWoodBreastplate, 1);
-            recipetwo.AddIngredient(ModContent.ItemType<DynastyWoodBreastplate>(), 1);
-            recipetwo.AddTile(TileID.WorkBenches);
-            recipetwo.SetResult(this);
-            recipetwo.AddRecipe();
+            recipe = new ModRecipe(mod);
+            recipe.AddIngredient(ItemID.WoodBreastplate, 1);
+            recipe.AddIngredient(ItemID.BorealWoodBreastplate, 1);
+            recipe.AddIngredient(ItemID.RichMahoganyBreastplate, 1);
+            recipe.AddIngredient(ItemID.ShadewoodBreastplate, 1);
+            recipe.AddIngredient(ItemID.PalmWoodBreastplate, 1);
+            recipe.AddIngredient(ModContent.ItemType<DynastyWoodBreastplate>(), 1);
+            recipe.AddTile(TileID.WorkBenches);
+            recipe.SetResult(this);
+            recipe.AddRecipe();
         }
     }
 }

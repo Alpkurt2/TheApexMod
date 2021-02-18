@@ -55,7 +55,8 @@ namespace TheApexMod.Items.Weapons.Magic
                 float num17 = num13 * num15;
                 float SpeedX = num16 + (float)Main.rand.Next(-40, 41) * 0.02f;
                 float SpeedY = num17 + (float)Main.rand.Next(-40, 41) * 0.02f;
-                Projectile.NewProjectile(vector2_1.X, vector2_1.Y, SpeedX, SpeedY, type, damage, knockBack, Main.myPlayer, 0.0f, (float)Main.rand.Next(5));
+                int proj = Projectile.NewProjectile(vector2_1.X, vector2_1.Y, SpeedX, SpeedY, type, damage, knockBack, Main.myPlayer, 0.0f, (float)Main.rand.Next(5));
+                Main.projectile[proj].magic = true;
             }
             return false;
         }

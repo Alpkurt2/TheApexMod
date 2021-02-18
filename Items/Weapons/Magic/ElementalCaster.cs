@@ -41,7 +41,7 @@ namespace TheApexMod.Items.Weapons.Magic
             item.rare = ItemRarityID.Cyan;
             item.UseSound = SoundID.Item43;
             item.autoReuse = true;
-            item.shoot = ProjectileID.ShadowBeamFriendly;
+            item.shoot = ProjectileID.VenomFang;
             item.shootSpeed = 15f;
             Item.staff[item.type] = true;
 
@@ -51,7 +51,14 @@ namespace TheApexMod.Items.Weapons.Magic
             switch (Main.rand.Next(5))
             {
                 case 0:
-                    item.shoot = ProjectileID.ShadowBeamFriendly;
+                    float numberProjectiles = 4;
+                    float rotation = MathHelper.ToRadians(5);
+                    position += Vector2.Normalize(new Vector2(speedX, speedY)) * 45f;
+                    for (int i = 0; i < numberProjectiles; i++)
+                    {
+                        Vector2 perturbedSpeed = new Vector2(speedX, speedY).RotatedBy(MathHelper.Lerp(-rotation, rotation, i / (numberProjectiles - 1))) * .8f;
+                        Projectile.NewProjectile(position.X, position.Y, perturbedSpeed.X, perturbedSpeed.Y, ProjectileID.VenomFang, damage, knockBack, player.whoAmI);
+                    }
                     break;
                 case 1:
                     item.shoot = ProjectileID.LostSoulFriendly;
@@ -63,7 +70,7 @@ namespace TheApexMod.Items.Weapons.Magic
                     item.shoot = ProjectileID.FrostBoltStaff;
                     break;
                 case 4:
-                    item.shoot = ProjectileID.BoulderStaffOfEarth;
+                    item.shoot = ProjectileID.CrystalPulse;
                     break;
 
             }

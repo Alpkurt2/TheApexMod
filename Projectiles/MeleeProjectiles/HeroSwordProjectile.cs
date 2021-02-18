@@ -28,12 +28,12 @@ namespace TheApexMod.Projectiles.MeleeProjectiles
         {
             projectile.rotation = (float)Math.Atan2(projectile.velocity.Y, projectile.velocity.X) + 0.785f;
 
-            int num313 = Dust.NewDust(new Vector2(projectile.Center.X - projectile.velocity.X * 4f + 2f, projectile.Center.Y + 2f - projectile.velocity.Y * 4f), 8, 8, 135, projectile.oldVelocity.X, projectile.oldVelocity.Y, 100, default(Color), 1.25f);
+            int num313 = Dust.NewDust(new Vector2(projectile.Center.X - projectile.velocity.X * 4f + 2f, projectile.Center.Y + 2f - projectile.velocity.Y * 4f), projectile.width / 4, projectile.height / 4, 135, projectile.oldVelocity.X, projectile.oldVelocity.Y, 100, default(Color), 1.25f);
             Dust dust53 = Main.dust[num313];
             Main.dust[num313].noGravity = true;
             Dust dust2 = dust53;
             dust2.velocity *= -0.25f;
-            num313 = Dust.NewDust(new Vector2(projectile.Center.X - projectile.velocity.X * 4f + 2f, projectile.Center.Y + 2f - projectile.velocity.Y * 4f), 8, 8, 135, projectile.oldVelocity.X, projectile.oldVelocity.Y, 100, default(Color), 1.25f);
+            num313 = Dust.NewDust(new Vector2(projectile.Center.X - projectile.velocity.X * 4f + 2f, projectile.Center.Y + 2f - projectile.velocity.Y * 4f), projectile.width / 4, projectile.height / 4, 135, projectile.oldVelocity.X, projectile.oldVelocity.Y, 100, default(Color), 1.25f);
             dust53 = Main.dust[num313];
             dust2 = dust53;
             dust2.velocity *= -0.25f;

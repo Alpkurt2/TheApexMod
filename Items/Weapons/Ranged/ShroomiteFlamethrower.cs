@@ -8,11 +8,11 @@ using Terraria.ModLoader;
 
 namespace TheApexMod.Items.Weapons.Ranged
 {
-    public class CursedFlamethrower : ModItem
+    public class ShroomiteFlamethrower : ModItem
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Cursed Flamethrower");
+            DisplayName.SetDefault("Shroomite Flamethrower");
             Tooltip.SetDefault("For a friend");
         }
         public override void SetDefaults()

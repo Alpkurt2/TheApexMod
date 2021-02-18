@@ -18,7 +18,7 @@ namespace TheApexMod.Items.Weapons.Melee
 
         public override void SetDefaults()
         {
-            item.damage = 500;
+            item.damage = 225;
             item.melee = true;
             item.Size = new Vector2(114);
             item.useTime = 16;

@@ -12,61 +12,67 @@ namespace TheApexMod.Projectiles.RangedProjectiles
     {
         public override void SetDefaults()
         {
+            projectile.CloneDefaults(ProjectileID.MoonlordArrow);
             projectile.Name = "ApexArrow";
-            projectile.width = 18;
-            projectile.height = 26;
-            projectile.aiStyle = 1;
-            projectile.penetrate = 3;
-            projectile.friendly = true;
-            projectile.hostile = false;
-            projectile.tileCollide = true;
-            projectile.ignoreWater = true;
-            projectile.ranged = true;
-            projectile.light = 2;
-            projectile.arrow = true;
-
-
+            projectile.penetrate = -1;
+            projectile.alpha = 0;
+            projectile.timeLeft = 250;
         }
         public override void AI()
         {
             projectile.rotation = (float)Math.Atan2((double)projectile.velocity.Y, (double)projectile.velocity.X) + 1.57f;
-            if (Main.rand.Next(3) == 0)
-                Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y), projectile.width, projectile.height, DustID.AncientLight);
-
+            for (int num479 = 0; num479 < 5; num479++)
+            {
+                int dust2 = Dust.NewDust(projectile.position, projectile.width, projectile.height, DustID.AncientLight, projectile.velocity.X * 0.1f, projectile.velocity.Y * 0.1f, 150, default(Color), 1.2f);
+                Main.dust[dust2].noGravity = true;
+            }
         }
-
+        public override bool OnTileCollide(Vector2 oldVelocity)
+        {
+            projectile.velocity.X = 0f - projectile.velocity.X;
+            projectile.velocity.Y = 0f - projectile.velocity.Y;
+            return false;
+        }
 
 
         public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
         {
             target.immune[projectile.owner] = 6;
             target.AddBuff(mod.BuffType("WhiteFlames"), 300);
-            for (int i = 0; i < 3; i++)
+            Vector2 spawn = new Vector2(target.Center.X + Main.rand.Next(-150, 151), target.Center.Y - Main.rand.Next(600, 801));
+            Vector2 speed = target.Center - spawn;
+            speed.Normalize();
+            speed *= 9f;
+            Projectile.NewProjectile(spawn, speed * 2, ModContent.ProjectileType<ApexStar>(), damage, 1f, Main.myPlayer);
+            for (int i = 0; i < 200; i++)
             {
-                float x = projectile.position.X + (float)Main.rand.Next(-50, 50);
-                float y = projectile.position.Y - (float)Main.rand.Next(600, 900);
-                float velY = (float)Main.rand.Next(20, 40);
-                Projectile.NewProjectile(new Vector2(x, y), new Vector2(0, velY), mod.ProjectileType("ApexSwordRain"), projectile.damage, projectile.knockBack, projectile.owner);
+                projectile.localNPCImmunity[i] = -1;
+                Main.npc[i].immune[projectile.owner] = 0;
+                damage = (int)((double)damage * 0.96);
             }
         }
+    
 
         public override void Kill(int timeLeft)
         {
             Main.PlaySound(SoundID.Item10, projectile.Center);
-            for (int i = 0; i < 10; i++)
+            int num271 = Main.rand.Next(5, 10);
+            for (int num272 = 0; num272 < num271; num272++)
             {
-                int dust = Dust.NewDust(projectile.position, projectile.width,
-                    projectile.height, DustID.AncientLight, 0f, 0f, 100, default(Color), 3f);
-                Main.dust[dust].noGravity = true;
-                Main.dust[dust].velocity *= 7f;
-                dust = Dust.NewDust(projectile.position, projectile.width,
-                    projectile.height, DustID.AncientLight, 0f, 0f, 100, default(Color), 1f);
-                Main.dust[dust].velocity *= 3f;
+                int num273 = Dust.NewDust(projectile.Center, 0, 0, DustID.AncientLight, 0f, 0f, 100, default(Color), 0.5f);
+                Dust dust98 = Main.dust[num273];
+                Dust dust2 = dust98;
+                dust2.velocity *= 1.6f;
+                Main.dust[num273].velocity.Y -= 1f;
+                Main.dust[num273].position = Vector2.Lerp(Main.dust[num273].position, projectile.Center, 0.5f);
+                Main.dust[num273].noGravity = true;
             }
+            Vector2 spawn = new Vector2(projectile.Center.X + Main.rand.Next(-150, 151), projectile.Center.Y - Main.rand.Next(600, 801));
+            Vector2 speed = projectile.Center - spawn;
+            speed.Normalize();
+            speed *= 9f;
+            Projectile.NewProjectile(spawn, speed * 2, ModContent.ProjectileType<ApexStar>(), projectile.damage, 1f, Main.myPlayer);
+            
         }
-
-
-
-
     }
 }

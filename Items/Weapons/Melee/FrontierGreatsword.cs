@@ -62,20 +62,20 @@ namespace TheApexMod.Items.Weapons.Melee
         {
             if (player.altFunctionUse == 2)
             {
+                item.damage = 2000;
                 item.useStyle = ItemUseStyleID.SwingThrow;
                 item.shoot = ProjectileID.None;
                 item.UseSound = SoundID.Item60;
                 item.noMelee = false;
-                item.damage = 2000;
             }
             else
             {
+                item.damage = 575;
                 item.useStyle = ItemUseStyleID.HoldingOut;
                 item.shoot = mod.ProjectileType("EternityBeam");
                 item.channel = true;
                 item.UseSound = SoundID.Item13;
                 item.noMelee = true;
-                item.damage = 575;
             }
             return base.CanUseItem(player);
         }

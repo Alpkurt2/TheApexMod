@@ -31,6 +31,7 @@ namespace TheApexMod.Items.Weapons.Magic
             item.shoot = mod.ProjectileType("ShadowFlameBolt");
             item.shootSpeed = 11;
             item.noMelee = true;
+            item.mana = 13;
         }
     }
 }

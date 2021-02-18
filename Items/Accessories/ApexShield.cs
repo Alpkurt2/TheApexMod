@@ -13,7 +13,7 @@ namespace TheApexMod.Items.Accessories
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Apex Shield");
-            Tooltip.SetDefault("Immunity to knockback and fire blocks\nImmune to majority of Debuffs.\n20% Damage Reduction\n+100 Health\nAbsorbs 25% of damage done to players on your team when above 25% life\nGives you a dash");
+            Tooltip.SetDefault("Immunity to knockback and fire blocks\nImmune to majority of Debuffs\n20% Damage Reduction\n+100 Maximum Health\nAbsorbs 25% of damage done to players on your team when above 25% life\nGives you a dash\nMay confuse nearby enemies after being struck");
         }
         public override void ModifyTooltips(List<TooltipLine> list)
         {
@@ -46,6 +46,7 @@ namespace TheApexMod.Items.Accessories
             player.dash = 2;
             player.fireWalk = true;
             player.endurance += 0.2f;
+            player.brainOfConfusion = true;
             player.buffImmune[BuffID.Chilled] = true;
             player.buffImmune[BuffID.Frozen] = true;
             player.buffImmune[BuffID.Stoned] = true;
@@ -69,6 +70,7 @@ namespace TheApexMod.Items.Accessories
             recipe.AddIngredient(ItemID.PaladinsShield, 1);
             recipe.AddIngredient(ItemID.EoCShield, 1);
             recipe.AddIngredient(ItemID.WormScarf, 1);
+            recipe.AddIngredient(ItemID.BrainOfConfusion, 1);
             recipe.AddIngredient(ModContent.ItemType<Materials.RainbowFeather>(), 5);
             recipe.AddTile(TileID.LunarCraftingStation);
             recipe.SetResult(this);

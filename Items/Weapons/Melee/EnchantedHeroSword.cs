@@ -31,11 +31,15 @@ namespace TheApexMod.Items.Weapons.Melee
             item.autoReuse = true;
             item.shoot = mod.ProjectileType("HeroSwordProjectile");
             item.shootSpeed = 20;
+            item.scale = 1.25f;
         }
         public override void MeleeEffects(Player player, Rectangle hitbox)
         {
             if (Main.rand.Next(3) == 0)
-                Dust.NewDust(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, 135);
+            {
+                int dust2 = Dust.NewDust(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, 135);
+                Main.dust[dust2].noGravity = true;
+            }
         }
 
         public override void AddRecipes()

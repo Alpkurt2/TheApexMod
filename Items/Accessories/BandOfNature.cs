@@ -52,7 +52,8 @@ namespace TheApexMod.Items.Accessories
             recipe.AddIngredient(ItemID.Vine, 5);
             recipe.AddIngredient(ItemID.LifeFruit, 5);
             recipe.AddIngredient(ItemID.FragmentVortex, 10);
-            recipe.AddTile(TileID.TinkerersWorkbench);
+            recipe.AddIngredient(ItemID.LunarBar, 5);
+            recipe.AddTile(TileID.LunarCraftingStation);
             recipe.SetResult(this);
             recipe.AddRecipe();
         }

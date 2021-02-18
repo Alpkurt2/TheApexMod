@@ -13,6 +13,7 @@ using Terraria.ModLoader;
 using Terraria.ModLoader.Config;
 using Terraria.UI;
 using Terraria.UI.Chat;
+using TheApexMod.Items.Materials;
 
 namespace TheApexMod
 {
@@ -52,13 +53,7 @@ namespace TheApexMod
         {
             ModRecipe recipe = new ModRecipe(this);
             recipe.AddIngredient(ItemID.Wood, 20);
-            recipe.AddIngredient(ItemID.IronBar, 2);
-            recipe.AddTile(TileID.WorkBenches);
-            recipe.SetResult(ItemID.WoodenBoomerang);
-            recipe.AddRecipe();
-            recipe = new ModRecipe(this);
-            recipe.AddIngredient(ItemID.Wood, 20);
-            recipe.AddIngredient(ItemID.LeadBar, 2);
+            recipe.AddRecipeGroup(RecipeGroupID.IronBar, 2);
             recipe.AddTile(TileID.WorkBenches);
             recipe.SetResult(ItemID.WoodenBoomerang);
             recipe.AddRecipe();
@@ -70,11 +65,72 @@ namespace TheApexMod
             recipe.SetResult(ItemID.BundleofBalloons);
             recipe.AddRecipe();
             recipe = new ModRecipe(this);
-            recipe.AddIngredient(ItemID.HellstoneBar, 10);
-            recipe.AddIngredient(ItemID.MagicMissile, 1);
+            recipe.AddIngredient(ItemID.GoodieBag, 10);
+            recipe.AddIngredient(ItemID.Leather, 5);
+            recipe.AddRecipeGroup(RecipeGroupID.IronBar, 2);
             recipe.AddTile(TileID.Anvils);
-            recipe.SetResult(ItemID.Flamelash);
+            recipe.SetResult(ItemID.BladedGlove);
             recipe.AddRecipe();
+            recipe = new ModRecipe(this);
+            recipe.AddIngredient(ItemID.GoodieBag, 10);
+            recipe.AddIngredient(ItemID.WoodenBoomerang, 1);
+            recipe.AddRecipeGroup(RecipeGroupID.IronBar, 5);
+            recipe.AddTile(TileID.Anvils);
+            recipe.SetResult(ItemID.BloodyMachete);
+            recipe.AddRecipe();
+            recipe = new ModRecipe(this);
+            recipe.AddIngredient(ItemID.BrainOfConfusion, 1);
+            recipe.AddTile(TileID.DemonAltar);
+            recipe.SetResult(ItemID.WormScarf);
+            recipe.AddRecipe();
+            recipe = new ModRecipe(this);
+            recipe.AddIngredient(ItemID.WormScarf, 1);
+            recipe.AddTile(TileID.DemonAltar);
+            recipe.SetResult(ItemID.BrainOfConfusion);
+            recipe.AddRecipe();
+
+            List<Recipe> rec = Main.recipe.ToList();
+            int numberRecipesRemoved = 0;
+            numberRecipesRemoved += rec.RemoveAll(x => x.createItem.type == ItemID.AlphabetStatueU);
+            rec.Where(x => x.createItem.type == ItemID.TurtleHelmet).ToList().ForEach(s =>
+            {
+                for (int i = 0; i < s.requiredItem.Length; i++)
+                {
+                    s.requiredItem[i] = new Item();
+                }
+                s.requiredItem[0].SetDefaults(ModContent.ItemType<TurtleBar>(), false);
+                s.requiredItem[0].stack = 12;
+
+                s.createItem.SetDefaults(ItemID.TurtleHelmet, false);
+                s.createItem.stack = 1;
+            });
+            rec.Where(x => x.createItem.type == ItemID.TurtleLeggings).ToList().ForEach(s =>
+            {
+                for (int i = 0; i < s.requiredItem.Length; i++)
+                {
+                    s.requiredItem[i] = new Item();
+                }
+                s.requiredItem[0].SetDefaults(ModContent.ItemType<TurtleBar>(), false);
+                s.requiredItem[0].stack = 18;
+
+                s.createItem.SetDefaults(ItemID.TurtleLeggings, false);
+                s.createItem.stack = 1;
+            });
+            rec.Where(x => x.createItem.type == ItemID.TurtleScaleMail).ToList().ForEach(s =>
+            {
+                for (int i = 0; i < s.requiredItem.Length; i++)
+                {
+                    s.requiredItem[i] = new Item();
+                }
+                s.requiredItem[0].SetDefaults(ModContent.ItemType<TurtleBar>(), false);
+                s.requiredItem[0].stack = 24;
+
+                s.createItem.SetDefaults(ItemID.TurtleScaleMail, false);
+                s.createItem.stack = 1;
+            });
+            Main.recipe = rec.ToArray();
+            Array.Resize(ref Main.recipe, Recipe.maxRecipes);
+            Recipe.numRecipes -= numberRecipesRemoved;
         }
     }
 }

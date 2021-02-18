@@ -41,7 +41,7 @@ namespace TheApexMod.Items.Weapons.Magic
         {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(ModContent.ItemType<ElderCaster>(), 1);
-            recipe.AddIngredient(ItemID.SpectreStaff, 1);
+            recipe.AddIngredient(ItemID.Ectoplasm, 10);
             recipe.AddIngredient(ItemID.HallowedBar, 15);
             recipe.AddIngredient(ItemID.SoulofMight, 5);
             recipe.AddIngredient(ItemID.SoulofSight, 5);

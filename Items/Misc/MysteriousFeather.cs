@@ -13,7 +13,7 @@ namespace TheApexMod.Items.Misc
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Mysterious Feather");
-			Tooltip.SetDefault("Has a chance to spawn from every enemy in the space biome.");
+			Tooltip.SetDefault("Has a chance to spawn from every enemy in the space biome.\nEnrages outside the space biome.");
 		}
 
 		

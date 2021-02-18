@@ -19,7 +19,6 @@ namespace TheApexMod.Items.Materials
 		}
 		public override void SetDefaults()
 		{
-			item.CloneDefaults(ItemID.HellstoneBar);
 			item.maxStack = 999;
 			item.value = Item.sellPrice(silver: 40);
 			item.width = 20;

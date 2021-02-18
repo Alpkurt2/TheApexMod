@@ -58,16 +58,16 @@ namespace TheApexMod.Items.Weapons.Summoner
 			recipe.AddTile(TileID.WorkBenches);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
-			ModRecipe recipe1 = new ModRecipe(mod);
-			recipe1.AddIngredient(ModContent.ItemType<WoodenStaff>(), 1);
-			recipe1.AddIngredient(ItemID.BorealWood, 25);
-			recipe1.AddIngredient(ItemID.RichMahogany, 25);
-			recipe1.AddIngredient(ItemID.Shadewood, 25);
-			recipe1.AddIngredient(ItemID.PalmWood, 25);
-			recipe1.AddIngredient(ItemID.DynastyWood, 25);
-			recipe1.AddTile(TileID.WorkBenches);
-			recipe1.SetResult(this);
-			recipe1.AddRecipe();
+			recipe = new ModRecipe(mod);
+			recipe.AddIngredient(ModContent.ItemType<WoodenStaff>(), 1);
+			recipe.AddIngredient(ItemID.BorealWood, 25);
+			recipe.AddIngredient(ItemID.RichMahogany, 25);
+			recipe.AddIngredient(ItemID.Shadewood, 25);
+			recipe.AddIngredient(ItemID.PalmWood, 25);
+			recipe.AddIngredient(ItemID.DynastyWood, 25);
+			recipe.AddTile(TileID.WorkBenches);
+			recipe.SetResult(this);
+			recipe.AddRecipe();
 		}
 	}
 }

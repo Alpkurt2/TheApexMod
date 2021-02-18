@@ -9,7 +9,6 @@ using TheApexMod.Items.Materials;
 namespace TheApexMod.Items.Accessories
 {
     [AutoloadEquip(EquipType.HandsOn)]
-
     public class ApexGauntlet : ModItem
     {
         public override void SetStaticDefaults()
@@ -31,19 +30,20 @@ namespace TheApexMod.Items.Accessories
         public override void SetDefaults()
         {
             sbyte handOn = item.handOnSlot;
+            sbyte handOff = item.handOffSlot;
             item.CloneDefaults(ItemID.FireGauntlet);
             item.width = 26;
             item.height = 30;
             item.rare = ItemRarityID.Purple;
             item.value = Item.sellPrice(gold: 20);
             item.handOnSlot = handOn;
+            item.handOffSlot = handOff;
         }
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
             player.meleeDamage += 0.5f;
             player.meleeCrit += 15;
-            player.magmaStone = true;
             player.meleeSpeed += 0.15f;
             player.counterWeight = 556 + Main.rand.Next(6);
             player.yoyoGlove = true;

@@ -49,6 +49,7 @@ namespace TheApexMod.Items.Accessories
             player.pickSpeed += 0.3f;
             player.meleeSpeed += 0.2f;
             player.minionKB += 2;
+            player.maxMinions += 1;
 
         }
     }

@@ -27,7 +27,6 @@ namespace TheApexMod.Projectiles.SkyProjectiles
             projectile.hostile = false;
             projectile.tileCollide = false;
             projectile.ignoreWater = true;
-            projectile.melee = true;
             projectile.light = 1;
         }
         public override void AI()

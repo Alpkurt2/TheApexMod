@@ -34,5 +34,9 @@ namespace TheApexMod.Items.Weapons.Ranged
             item.shootSpeed = 30;
 
         }
+        public override Vector2? HoldoutOffset()
+        {
+            return new Vector2(-3f, -1);
+        }
     }
 }

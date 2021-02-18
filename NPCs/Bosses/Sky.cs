@@ -29,7 +29,7 @@ namespace TheApexMod.NPCs.Bosses
 			npc.width = 60;
 			npc.height = 64;
 			npc.damage = 120;
-			npc.defense = 30;
+			npc.defense = 80;
 			npc.lifeMax = 150000;
 			npc.HitSound = SoundID.NPCHit3;
 			npc.DeathSound = SoundID.NPCDeath3;
@@ -74,38 +74,38 @@ namespace TheApexMod.NPCs.Bosses
 				npc.damage = npc.defDamage;
 				npc.defense = npc.defDefense;
 			}
-			int num2 = (expertMode ? 20 : 30);
+			int num2 = (expertMode ? 3 : 6);
 			float num3 = (expertMode ? 0.275f : 0.225f);
 			float scaleFactor = (expertMode ? 8.5f : 7.5f);
 			if (flag4)
 			{
 				num3 = 0.7f;
 				scaleFactor = 12f;
-				num2 = 15;
+				num2 = 2;
 			}
 			else if (flag3 && flag5)
 			{
 				num3 = (expertMode ? 0.6f : 0.5f);
 				scaleFactor = (expertMode ? 10f : 8f);
-				num2 = (expertMode ? 20 : 10);
+				num2 = (expertMode ? 3 : 1);
 			}
 			else if (flag5 && !flag3 && !flag4)
 			{
-				num2 = 15;
+				num2 = 2;
 			}
-			int num4 = (expertMode ? 28 : 30);
-			float num5 = (expertMode ? 20f : 18f);
+			int num4 = (expertMode ? 20 : 24);
+			float num5 = (expertMode ? 22f : 20f);
 			if (flag4)
 			{
 				num4 = 25;
-				num5 = 27f;
+				num5 = 29f;
 			}
 			else if (flag5 && flag3)
 			{
 				num4 = (expertMode ? 27 : 30);
 				if (expertMode)
 				{
-					num5 = 21f;
+					num5 = 23f;
 				}
 			}
 			int num6 = 80;
@@ -149,11 +149,11 @@ namespace TheApexMod.NPCs.Bosses
 			}
 			if (!player.ZoneSkyHeight)
 			{
-				num2 = 10;
+				num2 = 1;
 				npc.damage = npc.defDamage * 2;
 				npc.defense = npc.defDefense * 2;
 				npc.ai[3] = 0f;
-				num5 += 6f;
+				num5 += 7f;
 			}
 			if (npc.localAI[0] == 0f)
 			{
@@ -549,8 +549,8 @@ namespace TheApexMod.NPCs.Bosses
 				if (Main.netMode != NetmodeID.MultiplayerClient && npc.ai[2] == (float)(num9 - 30))
 				{
 					Vector2 vector4 = npc.rotation.ToRotationVector2() * (Vector2.UnitX * npc.direction) * (npc.width + 20) / 2f + center;
-					Projectile.NewProjectile(vector4.X, vector4.Y, npc.direction * 2, 8f, ModContent.ProjectileType<SkyTyphoonH>(), 0, 0f, Main.myPlayer);
-					Projectile.NewProjectile(vector4.X, vector4.Y, -npc.direction * 2, 8f, ModContent.ProjectileType<SkyTyphoonH>(), 0, 0f, Main.myPlayer);
+					Projectile.NewProjectile(vector4.X, vector4.Y, npc.direction * 4, 8f, ModContent.ProjectileType<SkyTyphoonH>(), 0, 0f, Main.myPlayer);
+					Projectile.NewProjectile(vector4.X, vector4.Y, -npc.direction * 4, 8f, ModContent.ProjectileType<SkyTyphoonH>(), 0, 0f, Main.myPlayer);
 				}
 				npc.ai[2] += 1f;
 				if (npc.ai[2] >= (float)num9)

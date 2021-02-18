@@ -32,7 +32,7 @@ namespace TheApexMod.Items.Weapons.Melee
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.IronBar, 10);
+            recipe.AddRecipeGroup(RecipeGroupID.IronBar, 10);
             recipe.AddIngredient(ItemID.Wood, 10);
             recipe.AddTile(TileID.Anvils);
             recipe.SetResult(this);

@@ -45,7 +45,10 @@ namespace TheApexMod.Items.Weapons.Melee
         public override void MeleeEffects(Player player, Rectangle hitbox)
         {
             if (Main.rand.Next(3) == 0)
-                Dust.NewDust(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, DustID.AmberBolt);
+            {
+                int dust2 = Dust.NewDust(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, DustID.AmberBolt);
+                Main.dust[dust2].noGravity = true;
+            }
         }
         public override void AddRecipes()
         {

@@ -15,7 +15,6 @@ namespace TheApexMod.Items.Weapons.Craftwars
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("The Catalyst");
-            Tooltip.SetDefault("Craftwars 2");
         }
         public override void ModifyTooltips(List<TooltipLine> list)
         {

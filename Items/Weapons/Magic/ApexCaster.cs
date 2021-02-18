@@ -50,6 +50,19 @@ namespace TheApexMod.Items.Weapons.Magic
             item.shootSpeed = 20;
             Item.staff[item.type] = true;
         }
+        public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
+        {
+            float numberProjectiles = 10;
+            for (int i = 0; i < numberProjectiles; i++)
+            {
+                Vector2 spawn = new Vector2(position.X + Main.rand.Next(-200, 200), position.Y + Main.rand.Next(-100, 100));
+                Vector2 speed = Main.MouseWorld - spawn;
+                speed.Normalize();
+                speed *= 15f;
+                Projectile.NewProjectile(spawn, speed * 2, ModContent.ProjectileType<Projectiles.MagicProjectiles.ApexBolt>(), damage, 1f, Main.myPlayer);
+            }
+            return false;
+        }
 
         public override void AddRecipes()
         {

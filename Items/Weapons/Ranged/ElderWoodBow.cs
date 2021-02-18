@@ -48,16 +48,16 @@ namespace TheApexMod.Items.Weapons.Ranged
             recipe.SetResult(this);
             recipe.AddRecipe();
 
-            ModRecipe recipetwo = new ModRecipe(mod);
-            recipetwo.AddIngredient(ItemID.WoodenBow, 1);
-            recipetwo.AddIngredient(ItemID.BorealWoodBow, 1);
-            recipetwo.AddIngredient(ItemID.RichMahoganyBow, 1);
-            recipetwo.AddIngredient(ItemID.ShadewoodBow, 1);
-            recipetwo.AddIngredient(ItemID.PalmWoodBow, 1);
-            recipetwo.AddIngredient(ModContent.ItemType<DynastyWoodBow>(), 1);
-            recipetwo.AddTile(TileID.WorkBenches);
-            recipetwo.SetResult(this);
-            recipetwo.AddRecipe();
+            recipe = new ModRecipe(mod);
+            recipe.AddIngredient(ItemID.WoodenBow, 1);
+            recipe.AddIngredient(ItemID.BorealWoodBow, 1);
+            recipe.AddIngredient(ItemID.RichMahoganyBow, 1);
+            recipe.AddIngredient(ItemID.ShadewoodBow, 1);
+            recipe.AddIngredient(ItemID.PalmWoodBow, 1);
+            recipe.AddIngredient(ModContent.ItemType<DynastyWoodBow>(), 1);
+            recipe.AddTile(TileID.WorkBenches);
+            recipe.SetResult(this);
+            recipe.AddRecipe();
         }
     }
 }

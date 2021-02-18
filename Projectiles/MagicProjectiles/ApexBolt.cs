@@ -15,7 +15,7 @@ namespace TheApexMod.Projectiles.MagicProjectiles
             projectile.Name = "ApexBolt";
             projectile.width = 16;
             projectile.height = 16;
-            projectile.penetrate = 3;
+            projectile.penetrate = 1;
             projectile.timeLeft = 250;
             projectile.aiStyle = 29;
             projectile.friendly = true;
@@ -28,7 +28,7 @@ namespace TheApexMod.Projectiles.MagicProjectiles
         public override void AI()
         {
             projectile.rotation = (float)Math.Atan2((double)projectile.velocity.Y, (double)projectile.velocity.X) + 1.57f;
-            for (int num506 = 0; num506 < 15; num506++)
+            for (int num506 = 0; num506 < 2; num506++)
             {
                 int num507 = Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y), projectile.width, projectile.height, DustID.AncientLight, projectile.oldVelocity.X, projectile.oldVelocity.Y, 50, default(Color), 1.2f);
                 Main.dust[num507].noGravity = true;
@@ -43,14 +43,26 @@ namespace TheApexMod.Projectiles.MagicProjectiles
         }
         public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
         {
-            target.immune[projectile.owner] = 6;
+            target.immune[projectile.owner] = 3;
             target.AddBuff(mod.BuffType("WhiteFlames"), 300);
             for (int i = 0; i < 3; i++)
             {
-                float x = projectile.position.X + (float)Main.rand.Next(-50, 50);
-                float y = projectile.position.Y - (float)Main.rand.Next(600, 900);
-                float velY = (float)Main.rand.Next(20, 40);
-                Projectile.NewProjectile(new Vector2(x, y), new Vector2(0, velY), mod.ProjectileType("ApexSwordRain"), projectile.damage, projectile.knockBack, projectile.owner);
+                Vector2 spawn = new Vector2(target.position.X - 1000, target.position.Y + Main.rand.Next(-2500, 2500));
+                Vector2 speed = target.position - spawn;
+                speed.Normalize();
+                speed *= 15f;
+                Vector2 spawn1 = new Vector2(target.position.X + 1000, target.position.Y + Main.rand.Next(-2500, 2500));
+                Vector2 speed1 = target.position - spawn1;
+                speed1.Normalize();
+                speed1 *= 15f;
+                if (Main.rand.Next(2) == 0)
+                {
+                    Projectile.NewProjectile(spawn, speed * 2, ModContent.ProjectileType<Projectiles.MagicProjectiles.ApexBolt2>(), damage, 1f, Main.myPlayer);
+                }
+                else
+                {
+                    Projectile.NewProjectile(spawn1, speed1 * 2, ModContent.ProjectileType<Projectiles.MagicProjectiles.ApexBolt2>(), damage, 1f, Main.myPlayer);
+                }
             }
         }
         public override void Kill(int timeLeft)

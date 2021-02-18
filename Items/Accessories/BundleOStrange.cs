@@ -44,13 +44,13 @@ namespace TheApexMod.Items.Accessories
             recipe.AddTile(TileID.TinkerersWorkbench);
             recipe.SetResult(this);
             recipe.AddRecipe();
-            ModRecipe recipe2 = new ModRecipe(mod);
-            recipe2.AddIngredient(ItemID.BalloonHorseshoeFart, 1);
-            recipe2.AddIngredient(ItemID.BalloonHorseshoeHoney, 1);
-            recipe2.AddIngredient(ItemID.BalloonHorseshoeSharkron, 1);
-            recipe2.AddTile(TileID.TinkerersWorkbench);
-            recipe2.SetResult(this);
-            recipe2.AddRecipe();
+            recipe = new ModRecipe(mod);
+            recipe.AddIngredient(ItemID.BalloonHorseshoeFart, 1);
+            recipe.AddIngredient(ItemID.BalloonHorseshoeHoney, 1);
+            recipe.AddIngredient(ItemID.BalloonHorseshoeSharkron, 1);
+            recipe.AddTile(TileID.TinkerersWorkbench);
+            recipe.SetResult(this);
+            recipe.AddRecipe();
         }
     }
 }

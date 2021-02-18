@@ -29,7 +29,7 @@ namespace TheApexMod.Projectiles.RangedProjectiles
             for (int i = 0; i < 5; i++)
             {
                 int dust = Dust.NewDust(projectile.position, projectile.width,
-                    projectile.height, -1, 0f, 0f, 100, default(Color), 1f);
+                    projectile.height, 155, 0f, 0f, 100, default(Color), 1f);
                 Main.dust[dust].noGravity = false;
                 Main.dust[dust].velocity *= 2f;
             }

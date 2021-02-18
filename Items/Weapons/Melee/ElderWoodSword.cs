@@ -43,16 +43,16 @@ namespace TheApexMod.Items.Weapons.Melee
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 
-            ModRecipe recipetwo = new ModRecipe(mod);
-            recipetwo.AddIngredient(ItemID.WoodenSword, 1);
-            recipetwo.AddIngredient(ItemID.BorealWoodSword, 1);
-            recipetwo.AddIngredient(ItemID.RichMahoganySword, 1);
-            recipetwo.AddIngredient(ItemID.ShadewoodSword, 1);
-            recipetwo.AddIngredient(ItemID.PalmWoodSword, 1);
-            recipetwo.AddIngredient(ModContent.ItemType<DynastyWoodSword>(), 1);
-            recipetwo.AddTile(TileID.WorkBenches);
-            recipetwo.SetResult(this);
-            recipetwo.AddRecipe();
+            recipe = new ModRecipe(mod);
+            recipe.AddIngredient(ItemID.WoodenSword, 1);
+            recipe.AddIngredient(ItemID.BorealWoodSword, 1);
+            recipe.AddIngredient(ItemID.RichMahoganySword, 1);
+            recipe.AddIngredient(ItemID.ShadewoodSword, 1);
+            recipe.AddIngredient(ItemID.PalmWoodSword, 1);
+            recipe.AddIngredient(ModContent.ItemType<DynastyWoodSword>(), 1);
+            recipe.AddTile(TileID.WorkBenches);
+            recipe.SetResult(this);
+            recipe.AddRecipe();
         }
 	}
 }
