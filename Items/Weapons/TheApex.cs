@@ -78,6 +78,7 @@ namespace TheApexMod.Items.Weapons
             item.UseSound = SoundID.Item13;
             item.noMelee = true;
             Item.staff[item.type] = true;
+            item.scale = 2;
         }
         public override void OnHitNPC(Player player, NPC target, int damage, float knockBack, bool crit)
         {

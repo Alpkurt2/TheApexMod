@@ -31,9 +31,16 @@ namespace TheApexMod.Items.Misc
 		}
 		public override bool UseItem(Player player)
 		{
-			NPC.SpawnOnPlayer(player.whoAmI, mod.NPCType("Sky"));
-			Main.PlaySound(SoundID.Roar, player.position, 0);
-			return true;
+			if (player.ZoneSkyHeight)
+			{
+				NPC.SpawnOnPlayer(player.whoAmI, mod.NPCType("Sky"));
+				Main.PlaySound(SoundID.Roar, player.position, 0);
+				return true;
+			}
+			else
+			{
+				return false;
+			}
 		}
 	}
 }

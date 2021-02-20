@@ -30,8 +30,8 @@ namespace TheApexMod.Items.Weapons.Melee
             item.damage = 600;
             item.melee = true;
             item.Size = new Vector2(120f);
-            item.useTime = 50;
-            item.useAnimation = 50;
+            item.useTime = 32;
+            item.useAnimation = 32;
             item.useStyle = ItemUseStyleID.SwingThrow;
             item.knockBack = 100f;
             item.value = Item.sellPrice(platinum: 1);

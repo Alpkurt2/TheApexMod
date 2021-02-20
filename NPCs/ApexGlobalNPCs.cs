@@ -175,7 +175,7 @@ namespace TheApexMod.NPCs
             {
                 if (NPC.downedMoonlord)
                 {
-                    if (Main.rand.Next(500) == 0)
+                    if (Main.rand.Next(350) == 0)
                         Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<MysteriousFeather>(), 1);
                 }
             }

@@ -118,7 +118,7 @@ namespace TheApexMod.NPCs.Bosses
 			int num12 = 30;
 			int num13 = 120;
 			int num14 = 4;
-			float scaleFactor3 = 6f;
+			float scaleFactor3 = 4f;
 			float scaleFactor4 = 20f;
 			float num15 = (float)Math.PI * 2f / (float)(num13 / 2);
 			int num16 = 75;
@@ -549,8 +549,7 @@ namespace TheApexMod.NPCs.Bosses
 				if (Main.netMode != NetmodeID.MultiplayerClient && npc.ai[2] == (float)(num9 - 30))
 				{
 					Vector2 vector4 = npc.rotation.ToRotationVector2() * (Vector2.UnitX * npc.direction) * (npc.width + 20) / 2f + center;
-					Projectile.NewProjectile(vector4.X, vector4.Y, npc.direction * 4, 8f, ModContent.ProjectileType<SkyTyphoonH>(), 0, 0f, Main.myPlayer);
-					Projectile.NewProjectile(vector4.X, vector4.Y, -npc.direction * 4, 8f, ModContent.ProjectileType<SkyTyphoonH>(), 0, 0f, Main.myPlayer);
+					Projectile.NewProjectile(vector4.X, vector4.Y, npc.direction * 4, 8f, ModContent.ProjectileType<SkyTyphoonH>(), 0, 0f, Main.myPlayer, 1f, npc.target + 1);
 				}
 				npc.ai[2] += 1f;
 				if (npc.ai[2] >= (float)num9)
@@ -742,12 +741,15 @@ namespace TheApexMod.NPCs.Bosses
 					Main.PlaySound(SoundID.NPCKilled, (int)npc.Center.X, (int)npc.Center.Y, 19);
 					if (Main.netMode != NetmodeID.MultiplayerClient)
 					{
-						Vector2 vector6 = Vector2.Normalize(npc.velocity) * (npc.width + 20) / 2f + center;
-						int num31 = NPC.NewNPC((int)vector6.X, (int)vector6.Y + 45, ModContent.NPCType<SkyBubble>());
-						Main.npc[num31].target = npc.target;
-						Main.npc[num31].velocity = Vector2.Normalize(npc.velocity).RotatedBy((float)Math.PI / 2f * (float)npc.direction) * scaleFactor3;
-						Main.npc[num31].netUpdate = true;
-						Main.npc[num31].ai[3] = (float)Main.rand.Next(80, 121) / 100f;
+						for (int i = 0; i < 3; i++)
+						{
+							Vector2 vector6 = Vector2.Normalize(npc.velocity) * (npc.width + 20) / 2f + center;
+							int num31 = NPC.NewNPC((int)vector6.X, (int)vector6.Y + 45, ModContent.NPCType<SkyBubble>());
+							Main.npc[num31].target = npc.target;
+							Main.npc[num31].velocity = Vector2.Normalize(npc.velocity).RotatedBy((float)Math.PI / 2f * (float)npc.direction) * scaleFactor3;
+							Main.npc[num31].netUpdate = true;
+							Main.npc[num31].ai[3] = (float)Main.rand.Next(80, 121) / 100f;
+						}
 					}
 				}
 				npc.velocity = npc.velocity.RotatedBy((0f - num15) * (float)npc.direction);

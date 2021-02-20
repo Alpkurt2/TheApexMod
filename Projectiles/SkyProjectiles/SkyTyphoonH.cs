@@ -18,9 +18,15 @@ namespace TheApexMod.Projectiles.SkyProjectiles
 		{
 			projectile.CloneDefaults(ProjectileID.SharknadoBolt);
 			projectile.aiStyle = -1;
+			projectile.width = 30;
+			projectile.height = 30;
+			projectile.hostile = true;
+			projectile.penetrate = -1;
+			projectile.alpha = 255;
+			projectile.timeLeft = 300;
 		}
-        public override void AI()
-        {
+		public override void AI()
+		{
 			if (projectile.ai[1] > 0f)
 			{
 				int num629 = (int)projectile.ai[1] - 1;
@@ -54,7 +60,7 @@ namespace TheApexMod.Projectiles.SkyProjectiles
 						projectile.frame = (int)(projectile.localAI[0] / 3f) % 3;
 					}
 					Vector2 value15 = Main.player[num629].Center - projectile.Center;
-					float num633 = 4f;
+					float num633 = 6f;
 					num633 += projectile.localAI[0] / 20f;
 					projectile.velocity = Vector2.Normalize(value15) * num633;
 					if (value15.Length() < 50f)

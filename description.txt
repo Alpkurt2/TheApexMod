@@ -9,5 +9,6 @@ Version 0.2: 'The Elemental Update' Made dynasty wood armor and made it so Elder
 Version 0.2.1: GITHUB INTEGRATION!!
 Version 0.2.2: Forum Page
 Version 0.3: Overhaul of the Apex weapons (except for staff because I have no clue what to do with it), megashark line, turtle bars and I polished some stuff that I did in the past.
+Version 0.3.1: Revamped the Sky boss so he's way harder now.
 
 This mod is far from complete and expect even cooler stuff in the future!

@@ -28,7 +28,7 @@ namespace TheApexMod.Items.Weapons.Craftwars
         }
         public override void SetDefaults()
         {
-            item.damage = 120;
+            item.damage = 94;
             item.melee = true;
             item.useTime = 12;
             item.useAnimation = 12;
