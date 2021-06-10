@@ -72,10 +72,10 @@ namespace TheApexMod.Projectiles.SummonerProjectiles
 			float num543 = projectile.position.Y;
 			float num544 = 900f;
 			bool flag19 = false;
-			int num545 = 500;
+			int num545 = 1000;
 			if (projectile.ai[1] != 0f || projectile.friendly)
 			{
-				num545 = 1400;
+				num545 = 2800;
 			}
 			if (Math.Abs(projectile.Center.X - Main.player[projectile.owner].Center.X) + Math.Abs(projectile.Center.Y - Main.player[projectile.owner].Center.Y) > (float)num545)
 			{
@@ -83,7 +83,7 @@ namespace TheApexMod.Projectiles.SummonerProjectiles
 			}
 			if (projectile.ai[0] == 0f)
 			{
-				projectile.tileCollide = true;
+				projectile.tileCollide = false;
 				NPC ownerMinionAttackTargetNPC2 = projectile.OwnerMinionAttackTargetNPC;
 				if (ownerMinionAttackTargetNPC2 != null && ownerMinionAttackTargetNPC2.CanBeChasedBy(projectile))
 				{
@@ -203,8 +203,8 @@ namespace TheApexMod.Projectiles.SummonerProjectiles
 				num561 = num558 / num561;
 				num559 *= num561;
 				num560 *= num561;
-				projectile.velocity.X = (projectile.velocity.X * 14f + num559) / 15f;
-				projectile.velocity.Y = (projectile.velocity.Y * 14f + num560) / 15f;
+				projectile.velocity.X = (projectile.velocity.X * 2f + num559) / 3f;
+				projectile.velocity.Y = (projectile.velocity.Y * 2f + num560) / 3f;
 			}
 			else
 			{

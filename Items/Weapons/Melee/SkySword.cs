@@ -4,7 +4,6 @@ using System;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using TheApexMod.Items.Weapons.Craftwars;
 using TheApexMod.Projectiles;
 
 namespace TheApexMod.Items.Weapons.Melee

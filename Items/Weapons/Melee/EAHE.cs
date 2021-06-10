@@ -51,7 +51,7 @@ namespace TheApexMod.Items.Weapons.Melee
             recipe.AddIngredient(ModContent.ItemType<EnchantedHeroSword>(), 1);
             recipe.AddIngredient(ModContent.ItemType<ArthursExcalibur>(), 1);
             recipe.AddIngredient(ItemID.LunarBar, 10);
-            recipe.AddIngredient(ModContent.ItemType<RainbowFeather>(), 5);
+            recipe.AddIngredient(ModContent.ItemType<ApexEssence>(), 1);
             recipe.AddTile(TileID.LunarCraftingStation);
             recipe.SetResult(this);
             recipe.AddRecipe();

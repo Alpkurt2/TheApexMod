@@ -14,7 +14,7 @@ namespace TheApexMod.Items.Accessories
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Apex Gauntlet");
-            Tooltip.SetDefault("Gives the user master yoyo skills.\n50% increased melee damage\nInflicts fire damage on attack\n15% increased melee critical strike chance and melee speed");
+            Tooltip.SetDefault("Gives the user master yoyo skills.\n50% increased melee damage\nInflicts White Flames on hit\n15% increased melee critical strike chance and melee speed");
         }
         public override void ModifyTooltips(List<TooltipLine> list)
         {
@@ -58,7 +58,7 @@ namespace TheApexMod.Items.Accessories
             recipe.AddIngredient(ItemID.FireGauntlet, 1);
             recipe.AddIngredient(ItemID.YoyoBag, 1);
             recipe.AddIngredient(ItemID.WarriorEmblem, 1);
-            recipe.AddIngredient(ModContent.ItemType<RainbowFeather>(), 5);
+            recipe.AddIngredient(ModContent.ItemType<ApexEssence>(), 1);
             recipe.AddTile(TileID.TinkerersWorkbench);
             recipe.SetResult(this);
             recipe.AddRecipe();

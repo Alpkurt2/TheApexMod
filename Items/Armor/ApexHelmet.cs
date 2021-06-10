@@ -7,6 +7,7 @@ using TheApexMod.Projectiles;
 using TheApexMod;
 using System.Security.Policy;
 using Terraria.DataStructures;
+using TheApexMod.Items.Materials;
 
 namespace TheApexMod.Items.Armor
 {
@@ -71,7 +72,7 @@ namespace TheApexMod.Items.Armor
             recipe.AddIngredient(ItemID.NebulaHelmet, 1);
             recipe.AddIngredient(ItemID.StardustHelmet, 1);
             recipe.AddIngredient(ItemID.VortexHelmet, 1);
-            recipe.AddIngredient(mod.ItemType("RainbowFeather"), 5);
+            recipe.AddIngredient(ModContent.ItemType<ApexEssence>(), 1);
             recipe.AddTile(TileID.LunarCraftingStation);
             recipe.SetResult(this);
             recipe.AddRecipe();

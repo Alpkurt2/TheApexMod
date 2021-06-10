@@ -43,7 +43,7 @@ namespace TheApexMod.Projectiles
             {
 				projectile.damage = damage;
             }
-        }
+		}
 
         public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
 		{

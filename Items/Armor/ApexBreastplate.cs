@@ -6,6 +6,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.DataStructures;
 using System.Collections.Generic;
+using TheApexMod.Items.Materials;
 
 namespace TheApexMod.Items.Armor
 {
@@ -59,7 +60,7 @@ namespace TheApexMod.Items.Armor
             recipe.AddIngredient(ItemID.NebulaBreastplate, 1);
             recipe.AddIngredient(ItemID.StardustBreastplate, 1);
             recipe.AddIngredient(ItemID.VortexBreastplate, 1);
-            recipe.AddIngredient(mod.ItemType("RainbowFeather"), 5);
+            recipe.AddIngredient(ModContent.ItemType<ApexEssence>(), 1);
             recipe.AddTile(TileID.LunarCraftingStation);
             recipe.SetResult(this);
             recipe.AddRecipe();

@@ -13,7 +13,6 @@ namespace TheApexMod.Projectiles.MeleeProjectiles
         {
             projectile.Name = "FrostarangProjectile";
             projectile.CloneDefaults(ProjectileID.Flamarang);
-            aiType = ProjectileID.Flamarang;
             projectile.width = 18;
             projectile.height = 32;
             projectile.penetrate = -1;

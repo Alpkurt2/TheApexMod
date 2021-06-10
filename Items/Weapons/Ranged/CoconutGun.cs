@@ -18,7 +18,7 @@ namespace TheApexMod.Items.Weapons.Ranged
 
         public override void SetDefaults()
         {
-            item.damage = 135;
+            item.damage = 115;
             item.noMelee = true;
             item.ranged = true;
             item.Size = new Vector2(120f);

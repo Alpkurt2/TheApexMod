@@ -19,7 +19,7 @@ namespace TheApexMod.Items.Weapons.Melee
         {
             DisplayName.SetDefault("Comically Large Spoon");
             Tooltip.SetDefault("'As we can see king Bach has presented a rather large spoon to his friend.\n" +
-                "The humor in this video stems from the fact that king Bach would like to consume ice cream but his friend resorts at him saying,\n" +
+                "The humor in this video stems from the fact that king Bach would like to consume ice cream but his friend retorts at him saying,\n" +
                 "he can only have a spoonful, nothing more. Bach then suddenly changes his expression and body language and reveals he is indeed in possession of a spoon. And not just any spoon,\n" +
                 "it is a massive stainless steel spoon. This is funny beacuse you would never expect someone to be casually in possession of a massive spoon to eat ice cream with.\n" +
                 "It is completely unorthodox and uncalled for. This is why the video is so humorous and was put on the 2012 Epic Vine Compilation playlist on Youtube'");

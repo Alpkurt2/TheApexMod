@@ -18,7 +18,7 @@ namespace TheApexMod.Projectiles.MeleeProjectiles
             projectile.width = 18;
             projectile.height = 26;
             projectile.timeLeft = 300;
-            projectile.penetrate = 2;
+            projectile.penetrate = -1;
             projectile.friendly = true;
             projectile.hostile = false;
             projectile.tileCollide = true;

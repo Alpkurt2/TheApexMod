@@ -30,7 +30,6 @@ namespace TheApexMod.Items.Weapons.Melee
         public override void SetDefaults()
         {
             item.damage = 50;
-            item.noMelee = true;
             item.melee = true;
             item.Size = new Vector2(120f);
             item.useTime = 12;

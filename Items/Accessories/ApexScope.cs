@@ -53,7 +53,7 @@ namespace TheApexMod.Items.Accessories
             recipe.AddIngredient(ItemID.SniperScope, 1);
             recipe.AddIngredient(ItemID.MagicQuiver, 1);
             recipe.AddIngredient(ItemID.RangerEmblem, 1);
-            recipe.AddIngredient(ModContent.ItemType<RainbowFeather>(), 5);
+            recipe.AddIngredient(ModContent.ItemType<ApexEssence>(), 1);
             recipe.AddTile(TileID.TinkerersWorkbench);
             recipe.SetResult(this);
             recipe.AddRecipe();

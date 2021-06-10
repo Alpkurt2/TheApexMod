@@ -71,7 +71,7 @@ namespace TheApexMod.Items.Accessories
             recipe.AddIngredient(ItemID.EoCShield, 1);
             recipe.AddIngredient(ItemID.WormScarf, 1);
             recipe.AddIngredient(ItemID.BrainOfConfusion, 1);
-            recipe.AddIngredient(ModContent.ItemType<Materials.RainbowFeather>(), 5);
+            recipe.AddIngredient(ModContent.ItemType<Materials.ApexEssence>(), 1);
             recipe.AddTile(TileID.LunarCraftingStation);
             recipe.SetResult(this);
             recipe.AddRecipe();

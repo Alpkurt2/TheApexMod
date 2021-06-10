@@ -83,5 +83,18 @@ namespace TheApexMod
                 }
             }
         }
+        public override void PostWorldGen()
+        {
+            for (int k = 0; k < (int)((Main.maxTilesX * Main.maxTilesY) * 6E-05); k++)
+            {
+                int x = WorldGen.genRand.Next(0, Main.maxTilesX);
+                int y = WorldGen.genRand.Next((int)WorldGen.rockLayerLow, Main.maxTilesY);
+                Tile tile = Framing.GetTileSafely(x, y);
+                if (tile.active() && tile.type == TileID.Ash)
+                {
+                    WorldGen.TileRunner(x, y, Main.maxTilesX, Main.maxTilesY, ModContent.TileType<FrozenAshTile>());
+                }
+            }
+        }
     }
 }

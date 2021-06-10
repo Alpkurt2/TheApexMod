@@ -45,7 +45,7 @@ namespace TheApexMod.Items.Weapons.Melee
         {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(ItemID.LunarHamaxeSolar, 1);
-            recipe.AddIngredient(ModContent.ItemType<RainbowFeather>(), 20);
+            recipe.AddIngredient(ModContent.ItemType<ApexEssence>(), 2);
             recipe.AddTile(TileID.LunarCraftingStation);
             recipe.SetResult(this);
             recipe.AddRecipe();

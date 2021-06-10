@@ -11,7 +11,7 @@ using TheApexMod.Items.Weapons.Magic;
 using TheApexMod.Items.Weapons.Melee;
 using TheApexMod.Items.Weapons.Ranged;
 using TheApexMod.Projectiles.MeleeProjectiles;
-using TheApexMod.Projectiles.SkyProjectiles;
+using TheApexMod.Projectiles.SkyProjectiles.BossProj;
 
 namespace TheApexMod.NPCs.Bosses
 {
@@ -39,7 +39,7 @@ namespace TheApexMod.NPCs.Bosses
 			npc.aiStyle = -1;
 			npc.lavaImmune = true;
 			npc.noTileCollide = true;
-			music = ModLoader.GetMod("TheApexMod").GetSoundSlot(SoundType.Music, "Sounds/Music/StarRain");
+			music = ModLoader.GetMod("TheApexMod").GetSoundSlot(SoundType.Music, "Sounds/Music/dokkanvegito");
 			musicPriority = (MusicPriority)10;
 			npc.buffImmune[31] = true;
 			bossBag = ModContent.ItemType<Items.Misc.SkyBag>();
@@ -311,7 +311,7 @@ namespace TheApexMod.NPCs.Bosses
 						Main.dust[num21].noLight = true;
 						Main.dust[num21].velocity = Vector2.Normalize(value2) * 3f;
 					}
-					Main.PlaySound(SoundID.Zombie, (int)center.X, (int)center.Y, 20);
+					Main.PlaySound(mod.GetLegacySoundSlot(SoundType.Custom, "Sounds/SFX/cucu1").WithVolume(1.5f).WithPitchVariance(.5f));
 				}
 				npc.ai[2] += 1f;
 				if (npc.ai[2] >= (float)num16)
@@ -508,15 +508,20 @@ namespace TheApexMod.NPCs.Bosses
 				}
 				if (npc.ai[2] == 0f)
 				{
-					Main.PlaySound(SoundID.Zombie, (int)center.X, (int)center.Y, 20);
+					Main.PlaySound(mod.GetLegacySoundSlot(SoundType.Custom, "Sounds/SFX/cucu1").WithVolume(1.5f).WithPitchVariance(.5f));
 				}
 				if (npc.ai[2] % (float)num7 == 0f)
 				{
-					Main.PlaySound(SoundID.NPCKilled, (int)npc.Center.X, (int)npc.Center.Y, 19);
+					Main.PlaySound(mod.GetLegacySoundSlot(SoundType.Custom, "Sounds/SFX/cucu2").WithVolume(1.5f).WithPitchVariance(.5f));
 					if (Main.netMode != NetmodeID.MultiplayerClient)
 					{
-						Vector2 vector3 = Vector2.Normalize(player.Center - center) * (npc.width + 20) / 2f + center;
-						NPC.NewNPC((int)vector3.X, (int)vector3.Y + 45, ModContent.NPCType<SkyBubble>());
+						for (int i = 0; i < 30; i++)
+						{
+							float vecx = npc.position.X + (float)Main.rand.Next(-5000, 5000);
+							float vecy = npc.position.Y - (float)Main.rand.Next(2000, 2200);
+							float velY = (float)Main.rand.Next(12, 24);
+							Projectile.NewProjectile(vecx, vecy, 0, velY, ModContent.ProjectileType<HSkyFeather>(), npc.damage / 8, 0f, Main.myPlayer, 1f, npc.target + 1);
+						}
 					}
 				}
 				int num26 = Math.Sign(player.Center.X - center.X);
@@ -544,7 +549,7 @@ namespace TheApexMod.NPCs.Bosses
 				npc.velocity.Y = MathHelper.Lerp(npc.velocity.Y, 0f, 0.02f);
 				if (npc.ai[2] == (float)(num9 - 30))
 				{
-					Main.PlaySound(SoundID.Zombie, (int)center.X, (int)center.Y, 9);
+					Main.PlaySound(mod.GetLegacySoundSlot(SoundType.Custom, "Sounds/SFX/cucu1").WithVolume(1.5f).WithPitchVariance(.5f));
 				}
 				if (Main.netMode != NetmodeID.MultiplayerClient && npc.ai[2] == (float)(num9 - 30))
 				{
@@ -566,7 +571,7 @@ namespace TheApexMod.NPCs.Bosses
 				npc.velocity.Y = MathHelper.Lerp(npc.velocity.Y, 0f, 0.02f);
 				if (npc.ai[2] == (float)(num10 - 60))
 				{
-					Main.PlaySound(SoundID.Zombie, (int)center.X, (int)center.Y, 20);
+					Main.PlaySound(mod.GetLegacySoundSlot(SoundType.Custom, "Sounds/SFX/cucu1").WithVolume(1.5f).WithPitchVariance(.5f));
 				}
 				npc.ai[2] += 1f;
 				if (npc.ai[2] >= (float)num10)
@@ -734,11 +739,11 @@ namespace TheApexMod.NPCs.Bosses
 			{
 				if (npc.ai[2] == 0f)
 				{
-					Main.PlaySound(SoundID.Zombie, (int)center.X, (int)center.Y, 20);
+					Main.PlaySound(mod.GetLegacySoundSlot(SoundType.Custom, "Sounds/SFX/cucu1").WithVolume(1.5f).WithPitchVariance(.5f));
 				}
 				if (npc.ai[2] % (float)num14 == 0f)
 				{
-					Main.PlaySound(SoundID.NPCKilled, (int)npc.Center.X, (int)npc.Center.Y, 19);
+					Main.PlaySound(mod.GetLegacySoundSlot(SoundType.Custom, "Sounds/SFX/cucu2").WithVolume(1.5f).WithPitchVariance(.5f));
 					if (Main.netMode != NetmodeID.MultiplayerClient)
 					{
 						for (int i = 0; i < 3; i++)
@@ -769,7 +774,7 @@ namespace TheApexMod.NPCs.Bosses
 				npc.velocity.Y = MathHelper.Lerp(npc.velocity.Y, 0f, 0.02f);
 				if (npc.ai[2] == (float)(num9 - 30))
 				{
-					Main.PlaySound(SoundID.Zombie, (int)center.X, (int)center.Y, 20);
+					Main.PlaySound(mod.GetLegacySoundSlot(SoundType.Custom, "Sounds/SFX/cucu1").WithVolume(1.5f).WithPitchVariance(.5f));
 				}
 				if (Main.netMode != NetmodeID.MultiplayerClient && npc.ai[2] == (float)(num9 - 30))
 				{
@@ -817,7 +822,7 @@ namespace TheApexMod.NPCs.Bosses
 				npc.velocity.Y = MathHelper.Lerp(npc.velocity.Y, 0f, 0.02f);
 				if (npc.ai[2] == (float)(num11 - 60))
 				{
-					Main.PlaySound(SoundID.Zombie, (int)center.X, (int)center.Y, 20);
+					Main.PlaySound(mod.GetLegacySoundSlot(SoundType.Custom, "Sounds/SFX/cucu1").WithVolume(1.5f).WithPitchVariance(.5f));
 				}
 				npc.ai[2] += 1f;
 				if (npc.ai[2] >= (float)num11)
@@ -964,7 +969,7 @@ namespace TheApexMod.NPCs.Bosses
 				npc.velocity.Y = MathHelper.Lerp(npc.velocity.Y, 0f, 0.02f);
 				if (npc.ai[2] == (float)(num12 / 2))
 				{
-					Main.PlaySound(SoundID.Zombie, (int)center.X, (int)center.Y, 20);
+					Main.PlaySound(mod.GetLegacySoundSlot(SoundType.Custom, "Sounds/SFX/cucu1").WithVolume(1.5f).WithPitchVariance(.5f));
 				}
 				if (Main.netMode != NetmodeID.MultiplayerClient && npc.ai[2] == (float)(num12 / 2))
 				{
@@ -1012,7 +1017,7 @@ namespace TheApexMod.NPCs.Bosses
 			{
 				if (npc.ai[2] == 0f)
 				{
-					Main.PlaySound(SoundID.Zombie, (int)center.X, (int)center.Y, 20);
+					Main.PlaySound(mod.GetLegacySoundSlot(SoundType.Custom, "Sounds/SFX/cucu1").WithVolume(1.5f).WithPitchVariance(.5f));
 				}
 				npc.velocity = npc.velocity.RotatedBy((0f - num15) * (float)npc.direction);
 				npc.rotation -= num15 * (float)npc.direction;
@@ -1024,6 +1029,16 @@ namespace TheApexMod.NPCs.Bosses
 					npc.ai[2] = 0f;
 					npc.ai[3] += 1f;
 					npc.netUpdate = true;
+				}
+			}
+			if (npc.lifeMax >= 0)
+			{
+				if (Main.rand.Next(20) == 0) 
+				{
+					float vecx = npc.position.X + (float)Main.rand.Next(-5000, 5000);
+					float vecy = npc.position.Y - (float)Main.rand.Next(2000, 2200);
+					float velY = (float)Main.rand.Next(12, 24);
+					Projectile.NewProjectile(vecx, vecy, 0, velY, ModContent.ProjectileType<HSkyFeather>(), npc.damage / 8, 0f, Main.myPlayer, 1f, npc.target + 1);
 				}
 			}
 		}

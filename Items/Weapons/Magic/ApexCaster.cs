@@ -72,7 +72,7 @@ namespace TheApexMod.Items.Weapons.Magic
             recipe.AddIngredient(ItemID.NebulaArcanum, 1);
             recipe.AddIngredient(ItemID.NebulaBlaze, 1);
             recipe.AddIngredient(ModContent.ItemType<NebulaTome>(), 1);
-            recipe.AddIngredient(ModContent.ItemType<RainbowFeather>(), 10);
+            recipe.AddIngredient(ModContent.ItemType<ApexEssence>(), 1);
             recipe.AddTile(TileID.LunarCraftingStation);
             recipe.SetResult(this);
             recipe.AddRecipe();

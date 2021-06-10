@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using TheApexMod.Items.Materials;
 
 namespace TheApexMod.Items.Tools
 {
@@ -58,7 +59,7 @@ namespace TheApexMod.Items.Tools
             recipe.AddIngredient(ItemID.LunarHamaxeSolar, 1);
             recipe.AddIngredient(ItemID.LunarHamaxeStardust, 1);
             recipe.AddIngredient(ItemID.LunarHamaxeVortex, 1);
-            recipe.AddIngredient(mod.ItemType("RainbowFeather"), 5);
+            recipe.AddIngredient(ModContent.ItemType<ApexEssence>(), 1);
             recipe.AddTile(TileID.LunarCraftingStation);
             recipe.SetResult(this);
             recipe.AddRecipe();

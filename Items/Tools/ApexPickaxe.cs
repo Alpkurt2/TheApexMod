@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using TheApexMod.Items.Materials;
 
 namespace TheApexMod.Items.Tools
 {
@@ -57,7 +58,7 @@ namespace TheApexMod.Items.Tools
             recipe.AddIngredient(ItemID.SolarFlarePickaxe, 1);
             recipe.AddIngredient(ItemID.NebulaPickaxe, 1);
             recipe.AddIngredient(ItemID.StardustPickaxe, 1);
-            recipe.AddIngredient(mod.ItemType("RainbowFeather"), 5);
+            recipe.AddIngredient(ModContent.ItemType<ApexEssence>(), 1);
             recipe.AddTile(TileID.LunarCraftingStation);
             recipe.SetResult(this);
             recipe.AddRecipe();

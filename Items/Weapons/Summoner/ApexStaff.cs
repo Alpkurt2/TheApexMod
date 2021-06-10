@@ -7,6 +7,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using TheApexMod.Buffs;
 using TheApexMod.Buffs.MinionBuffs;
+using TheApexMod.Items.Materials;
 using TheApexMod.Projectiles;
 using TheApexMod.Projectiles.SummonerProjectiles;
 
@@ -63,7 +64,7 @@ namespace TheApexMod.Items.Weapons.Summoner
 			recipe.AddIngredient(ItemID.SlimeStaff, 1);
 			recipe.AddIngredient(ItemID.StardustCellStaff, 1);
 			recipe.AddIngredient(ItemID.StardustDragonStaff, 1);
-			recipe.AddIngredient(mod.ItemType("RainbowFeather"), 10);
+			recipe.AddIngredient(ModContent.ItemType<ApexEssence>(), 1);
 			recipe.AddTile(TileID.LunarCraftingStation);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

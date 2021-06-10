@@ -6,6 +6,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.DataStructures;
 using System.Collections.Generic;
+using TheApexMod.Items.Materials;
 
 namespace TheApexMod.Items.Armor
 {
@@ -15,7 +16,7 @@ namespace TheApexMod.Items.Armor
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Apex Greaves");
-            Tooltip.SetDefault("The final armor.\n150% increased movement speed.\nIncreases your max number of minions by 2.\nIncreases damage and melee speed by 20%\nEnemies are more likely to target you.");
+            Tooltip.SetDefault("The final armor.\n200% increased movement speed.\nIncreases your max number of minions by 2.\nIncreases damage and melee speed by 20%\nEnemies are more likely to target you.");
             Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(4, 7));
 
         }
@@ -40,9 +41,7 @@ namespace TheApexMod.Items.Armor
 
         public override void UpdateEquip(Player player)
         {
-            player.moveSpeed += 1.5f;
-            player.maxRunSpeed += 1.5f;
-            player.runAcceleration += 1.5f;
+            player.moveSpeed += 2f;
             player.maxMinions += 2;
             player.allDamage += 0.2f;
             player.meleeSpeed += 0.2f;
@@ -59,7 +58,7 @@ namespace TheApexMod.Items.Armor
             recipe.AddIngredient(ItemID.NebulaLeggings, 1);
             recipe.AddIngredient(ItemID.StardustLeggings, 1);
             recipe.AddIngredient(ItemID.VortexLeggings, 1);
-            recipe.AddIngredient(mod.ItemType("RainbowFeather"), 5);
+            recipe.AddIngredient(ModContent.ItemType<ApexEssence>(), 1);
             recipe.AddTile(TileID.LunarCraftingStation);
             recipe.SetResult(this);
             recipe.AddRecipe();

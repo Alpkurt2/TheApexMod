@@ -83,7 +83,7 @@ namespace TheApexMod.Projectiles.SummonerProjectiles
 			}
 			if (projectile.ai[0] == 0f)
 			{
-				projectile.tileCollide = true;
+				projectile.tileCollide = false;
 				NPC ownerMinionAttackTargetNPC2 = projectile.OwnerMinionAttackTargetNPC;
 				if (ownerMinionAttackTargetNPC2 != null && ownerMinionAttackTargetNPC2.CanBeChasedBy(projectile))
 				{

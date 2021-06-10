@@ -81,8 +81,7 @@ namespace TheApexMod
             ApexCuffs = false;
             ApexScroll = false;
         }
-
-        public override void DrawEffects(PlayerDrawInfo drawInfo, ref float r, ref float g, ref float b, ref float a, ref bool fullBright)
+        public override void FrameEffects()
         {
             if (player.statLife < player.statLifeMax2)
             {
@@ -90,19 +89,17 @@ namespace TheApexMod
                 {
                     if (NatureBand)
                     {
+                        for (int nature = 0; nature < 2; nature++)
                         {
-                            for (int i = 0; i < 2; i++)
-                            {
-                                int num6 = Dust.NewDust(player.position, player.width, player.height, 222, 0f, 0f, 175, default(Color), 1);
-                                Main.dust[num6].noGravity = true;
-                                Main.dust[num6].velocity *= 0.75f;
-                                int num7 = Main.rand.Next(-40, 41);
-                                int num8 = Main.rand.Next(-40, 41);
-                                Main.dust[num6].position.X += num7;
-                                Main.dust[num6].position.Y += num8;
-                                Main.dust[num6].velocity.X = (float)(-num7) * 0.075f;
-                                Main.dust[num6].velocity.Y = (float)(-num8) * 0.075f;
-                            }
+                            int dust = Dust.NewDust(player.position, player.width, player.height, 222, 0f, 0f, 175, default(Color), 1);
+                            Main.dust[dust].noGravity = true;
+                            Main.dust[dust].velocity *= 0.75f;
+                            int rando1 = Main.rand.Next(-40, 41);
+                            int rando2 = Main.rand.Next(-40, 41);
+                            Main.dust[dust].position.X += rando1;
+                            Main.dust[dust].position.Y += rando2;
+                            Main.dust[dust].velocity.X = (float)(-rando1) * 0.075f;
+                            Main.dust[dust].velocity.Y = (float)(-rando2) * 0.075f;
                         }
                     }
                 }

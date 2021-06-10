@@ -61,7 +61,7 @@ namespace TheApexMod.Items.Weapons.Ranged
             recipe.AddIngredient(ModContent.ItemType<SandShark>(), 1);
             recipe.AddIngredient(ModContent.ItemType<TheDuke>(), 1);
             recipe.AddIngredient(ItemID.SDMG, 1);
-            recipe.AddIngredient(ModContent.ItemType<RainbowFeather>(), 10);
+            recipe.AddIngredient(ModContent.ItemType<ApexEssence>(), 1);
             recipe.AddTile(TileID.LunarCraftingStation);
             recipe.SetResult(this);
             recipe.AddRecipe();

@@ -7,7 +7,6 @@ using Terraria.ModLoader;
 using TheApexMod.Items.Materials;
 using TheApexMod.Items.Weapons.Magic;
 using TheApexMod.Items.Misc;
-using TheApexMod.Items.Weapons.Craftwars;
 using TheApexMod.Items.Weapons.Melee;
 using TheApexMod.Items.Accessories;
 using TheApexMod.Items.Weapons.Ranged;

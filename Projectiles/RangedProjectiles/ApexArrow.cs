@@ -16,12 +16,12 @@ namespace TheApexMod.Projectiles.RangedProjectiles
             projectile.Name = "ApexArrow";
             projectile.penetrate = -1;
             projectile.alpha = 0;
-            projectile.timeLeft = 250;
+            projectile.timeLeft = 420;
         }
         public override void AI()
         {
             projectile.rotation = (float)Math.Atan2((double)projectile.velocity.Y, (double)projectile.velocity.X) + 1.57f;
-            for (int num479 = 0; num479 < 5; num479++)
+            for (int num479 = 0; num479 < 2; num479++)
             {
                 int dust2 = Dust.NewDust(projectile.position, projectile.width, projectile.height, DustID.AncientLight, projectile.velocity.X * 0.1f, projectile.velocity.Y * 0.1f, 150, default(Color), 1.2f);
                 Main.dust[dust2].noGravity = true;

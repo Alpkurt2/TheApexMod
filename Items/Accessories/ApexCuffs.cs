@@ -57,7 +57,7 @@ namespace TheApexMod.Items.Accessories
             recipe.AddIngredient(ModContent.ItemType<CelestialEmblemCuffs>(), 1);
             recipe.AddIngredient(ItemID.ManaFlower, 1);
             recipe.AddIngredient(ItemID.SorcererEmblem, 1);
-            recipe.AddIngredient(ModContent.ItemType<RainbowFeather>(), 5);
+            recipe.AddIngredient(ModContent.ItemType<ApexEssence>(), 1);
             recipe.AddTile(TileID.TinkerersWorkbench);
             recipe.SetResult(this);
             recipe.AddRecipe();

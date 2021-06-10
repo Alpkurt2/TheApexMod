@@ -12,7 +12,6 @@ namespace TheApexMod.Items.Weapons.Ranged
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Clockwork Onyx Blaster");
-            Tooltip.SetDefault("Awesome fusion");
         }
 
         public override void SetDefaults()

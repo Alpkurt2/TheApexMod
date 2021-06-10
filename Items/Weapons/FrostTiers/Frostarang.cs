@@ -20,6 +20,7 @@ namespace TheApexMod.Items.Weapons.FrostTiers
         public override void SetDefaults()
         {
             item.CloneDefaults(ItemID.Flamarang);
+            item.shoot = ModContent.ProjectileType<FrostarangProjectile>();
         }
         public override bool CanUseItem(Player player)
         {

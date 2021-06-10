@@ -13,7 +13,7 @@ namespace TheApexMod.Items.Accessories
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Wooden Locket");
-            Tooltip.SetDefault("Remeber the good times.\nBuffs Every Stat");
+            Tooltip.SetDefault("'Remember the good times'.\nBuffs Every Stat");
             }
         public override void ModifyTooltips(List<TooltipLine> list)
         {

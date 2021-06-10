@@ -6,6 +6,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using TheApexMod.Buffs;
+using TheApexMod.Items.Materials;
 using TheApexMod.Projectiles;
 
 namespace TheApexMod.Items.Weapons.Melee
@@ -61,7 +62,7 @@ namespace TheApexMod.Items.Weapons.Melee
             recipe.AddIngredient(ItemID.SolarEruption, 1);
             recipe.AddIngredient(ItemID.DayBreak, 1);
             recipe.AddIngredient(ModContent.ItemType<SolarRotation>(), 1);
-            recipe.AddIngredient(mod.ItemType("RainbowFeather"), 10);
+            recipe.AddIngredient(ModContent.ItemType<ApexEssence>(), 1);
             recipe.AddTile(TileID.LunarCraftingStation);
             recipe.SetResult(this);
             recipe.AddRecipe();

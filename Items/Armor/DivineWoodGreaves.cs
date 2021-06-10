@@ -26,7 +26,6 @@ namespace TheApexMod.Items.Armor
         public override void UpdateEquip(Player player)
         {
             player.moveSpeed += 1f;
-            player.maxRunSpeed += 1f;
             player.maxMinions += 1;
             player.allDamage += 0.10f;
         }

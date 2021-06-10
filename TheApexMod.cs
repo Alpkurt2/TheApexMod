@@ -39,7 +39,7 @@ namespace TheApexMod
                     ModContent.ItemType<Items.Weapons.Melee.SkySword>(),  
                     ModContent.ItemType<Items.Weapons.Ranged.SkyBow>() ,
                     ModContent.ItemType<Items.Weapons.Magic.SkyCaster>(), 
-                    ModContent.ItemType<Items.Materials.RainbowFeather>() 
+                    ModContent.ItemType<Items.Materials.ApexEssence>() 
                     },
                     "Spawn by using [i:" + ModContent.ItemType<Items.Misc.MysteriousFeather>() + "].",
                     "This bird is happy to have been able to play with you.",
@@ -87,6 +87,36 @@ namespace TheApexMod
             recipe.AddIngredient(ItemID.WormScarf, 1);
             recipe.AddTile(TileID.DemonAltar);
             recipe.SetResult(ItemID.BrainOfConfusion);
+            recipe.AddRecipe();
+            recipe = new ModRecipe(this);
+            recipe.AddIngredient(ItemID.Ichor, 1);
+            recipe.AddTile(TileID.DemonAltar);
+            recipe.SetResult(ItemID.CursedFlame);
+            recipe.AddRecipe();
+            recipe = new ModRecipe(this);
+            recipe.AddIngredient(ItemID.CursedFlame, 1);
+            recipe.AddTile(TileID.DemonAltar);
+            recipe.SetResult(ItemID.Ichor);
+            recipe.AddRecipe();
+            recipe = new ModRecipe(this);
+            recipe.AddIngredient(ItemID.TissueSample, 1);
+            recipe.AddTile(TileID.DemonAltar);
+            recipe.SetResult(ItemID.ShadowScale);
+            recipe.AddRecipe();
+            recipe = new ModRecipe(this);
+            recipe.AddIngredient(ItemID.ShadowScale, 1);
+            recipe.AddTile(TileID.DemonAltar);
+            recipe.SetResult(ItemID.TissueSample);
+            recipe.AddRecipe();
+            recipe = new ModRecipe(this);
+            recipe.AddIngredient(ItemID.CrimtaneBar, 1);
+            recipe.AddTile(TileID.DemonAltar);
+            recipe.SetResult(ItemID.DemoniteBar);
+            recipe.AddRecipe();
+            recipe = new ModRecipe(this);
+            recipe.AddIngredient(ItemID.DemoniteBar, 1);
+            recipe.AddTile(TileID.DemonAltar);
+            recipe.SetResult(ItemID.CrimtaneBar);
             recipe.AddRecipe();
 
             List<Recipe> rec = Main.recipe.ToList();

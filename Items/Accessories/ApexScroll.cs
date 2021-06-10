@@ -49,7 +49,7 @@ namespace TheApexMod.Items.Accessories
             recipe.AddIngredient(ItemID.PapyrusScarab, 1);
             recipe.AddIngredient(ItemID.PygmyNecklace, 1);
             recipe.AddIngredient(ItemID.SummonerEmblem, 1);
-            recipe.AddIngredient(ModContent.ItemType<RainbowFeather>(), 5);
+            recipe.AddIngredient(ModContent.ItemType<ApexEssence>(), 1);
             recipe.AddTile(TileID.TinkerersWorkbench);
             recipe.SetResult(this);
             recipe.AddRecipe();

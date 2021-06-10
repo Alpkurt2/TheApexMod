@@ -25,7 +25,6 @@ namespace TheApexMod.Items.Armor
         public override void UpdateEquip(Player player)
         {
             player.moveSpeed += 0.1f;
-            player.maxRunSpeed += 0.1f;
         }
 
         public override void AddRecipes()
